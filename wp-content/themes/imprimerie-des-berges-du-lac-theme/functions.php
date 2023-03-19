@@ -138,10 +138,13 @@ add_action( 'widgets_init', 'imprimerie_des_berges_du_lac_theme_widgets_init' );
  * Enqueue scripts and styles.
  */
 function imprimerie_des_berges_du_lac_theme_scripts() {
-	wp_enqueue_style( 'imprimerie-des-berges-du-lac-theme-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_enqueue_style( 'imprimerie-des-berges-du-lac-bootstrap-css', get_template_directory_uri() . '/css/bootstrap.min.css', array(), 1, 'all' );
+	wp_enqueue_style( 'imprimerie-des-berges-du-lac-custome', get_template_directory_uri() . '/css/custome.css', array(), 1, 'all' );
 	wp_style_add_data( 'imprimerie-des-berges-du-lac-theme-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'imprimerie-des-berges-du-lac-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'imprimerie-des-berges-du-lac-theme-bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'imprimerie-des-berges-du-lac-theme-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'jquery' ), '20170710', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -175,4 +178,3 @@ require get_template_directory() . '/inc/customizer.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-

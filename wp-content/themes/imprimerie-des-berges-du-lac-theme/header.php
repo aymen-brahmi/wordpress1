@@ -51,8 +51,8 @@
                 <?php endif; ?>
             </div><!-- .site-branding -->
 
-            <nav id="site-navigation" class="main-navigation">
-                <button class="menu-toggle" aria-controls="primary-menu"
+            <nav id="site-navigation" class="main-navigation d-flex">
+                <button class="menu-toggle d-md-none" aria-controls="primary-menu"
                     aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'imprimerie-des-berges-du-lac-theme' ); ?></button>
                 <?php
 			wp_nav_menu(
